@@ -1,0 +1,12 @@
+
+<div *ngIf="options">
+    <h1 *ngIf="pageInfo" [innerHTML] = "getQuestion()"></h1>
+    <div>
+        <app-option *ngFor="let option of options, let i = index" 
+        [optionInfo]="option" [index]="i" (clicked)="optionClicked($event)"
+        [showResult]="(state === pageState.result)"></app-option>
+    </div>
+
+    <button class="actionButton" (click) ="(state !== pageState.result)?onOk():onContinue()"
+            [disabled]="(state === pageState.init)? 'disabled': null">{{(state !== pageState.result)?'OK':'Continue'}}</button>
+</div>

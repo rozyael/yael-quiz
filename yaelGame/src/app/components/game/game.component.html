@@ -1,0 +1,8 @@
+<div *ngIf="!state">
+    <h1 *ngIf="score">Congratulations! your score is {{score}}</h1>
+    <h1>Click start to play</h1>
+    <button (click)="StartGame()">Start game</button>
+</div>
+<div *ngIf="state">
+    <app-page [pageInfo]="pages[pageIndex]" [pageIndex]="pageIndex" (onNext) = "nextPage($event)"></app-page>
+</div>
