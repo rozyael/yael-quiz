@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { GameService } from 'src/app/services/game.service';
 import { Page } from 'src/app/models/page.model';
+import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 
 export enum gameState {
   start = 1,
@@ -14,6 +15,8 @@ export enum gameState {
 })
 
 export class GameComponent implements OnInit {
+  @ViewChild('carousel', {static : false}) carousel: NgbCarousel;
+  
   score:number = 0;
   pages:Page[] = [];
   pageIndex = 0;
@@ -25,20 +28,20 @@ export class GameComponent implements OnInit {
 
   StartGame(){
     this.pageIndex = 0;
-    this.state = 1;
     this.score = 0;
     this.gameService.getData().subscribe(data => {
       console.log(data['results']);
       this.pages = data['results'];
+      this.state = 1;
     })
   }
-  nextPage(score: number){
-    this.score += score;
-    if(this.pageIndex === this.pages.length -1) // last page
+  nextPage(page:{score:number, ind:number}){
+    this.score +=page.score;
+    this.carousel.next();
+    this.carousel.pause();
+    if(page.ind === this.pages.length -1) // last page
     {
       this.state = 0;
-    } else {
-      this.pageIndex ++;
     }
   }
 }

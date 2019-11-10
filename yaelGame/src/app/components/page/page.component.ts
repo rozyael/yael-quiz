@@ -53,7 +53,7 @@ export class PageComponent implements OnInit {
   }
   onContinue(){
     let score = this.options.some(o => o.selected && o.is_correct)? 1:0;
-    this.onNext.emit(score);
+    this.onNext.emit({score:score, ind:this.pageIndex});
   }
   onOk(){
     this.state = PageState.result;

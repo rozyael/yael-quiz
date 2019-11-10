@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, HostListener, EventEmitter, Output } from '@angular/core';
 import { Option } from 'src/app/models/option.model';
+//import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-option',
@@ -18,7 +20,13 @@ export class OptionComponent implements OnInit {
   @Input() set optionInfo(option : Option) {
     this._optionInfo = option;
   }
-  constructor() { }
+  // constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+  //   iconRegistry.addSvgIcon(
+  //     'check',
+  //     sanitizer.bypassSecurityTrustResourceUrl('./assets/img/check.svg'));
+  // }
+  
+  constructor(){}
 
   ngOnInit() {
   }
