@@ -5,4 +5,8 @@
 </div>
 <div *ngIf="state">
     <app-page [pageInfo]="pages[pageIndex]" [pageIndex]="pageIndex" (onNext) = "nextPage($event)"></app-page>
+    <span *ngFor="let page of pages, let i = index">
+        <span class="dot" [style.background-color]="pageIndex===i?'rgb(105, 166, 190)':'#bbb'"></span>
+    </span>  
 </div>
+
