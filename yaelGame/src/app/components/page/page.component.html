@@ -1,8 +1,8 @@
 
 <div class="card" *ngIf="options">
-    <div class="row center">
-            <h5 *ngIf="pageInfo" style="font-weight: bold;color:steelblue; margin-right: 5px;">{{'Q:' + (pageIndex + 1)}}</h5>
-            <h5 *ngIf="pageInfo" [innerHTML] = "pageInfo.question"></h5>
+    <div class="row center question">
+            <span *ngIf="pageInfo" style="font-weight: bold;color:steelblue; margin-right: 5px;font-size: 1.1em;">{{'Q:' + (pageIndex + 1)}}</span>
+            <span *ngIf="pageInfo" style="font-size: 1.1em;"[innerHTML] = "pageInfo.question"></span>
     </div>
     <div class="options">
         <!-- <app-option *ngFor="let option of options, let i = index" 
