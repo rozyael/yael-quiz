@@ -65,8 +65,4 @@ export class PageComponent implements OnInit {
     this.options.map((o,index) => o.selected = (index === optionInd) ? true:false);
     this.state = PageState.selected;
   }
-
-  getQuestion(){
-    return 'Q' + (this.pageIndex + 1) + ': ' + this.pageInfo.question;
-  }
 }

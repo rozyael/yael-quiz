@@ -1,6 +1,4 @@
 .actionButton {
-    margin-left: auto;
-    margin-right: auto;
     width: 150px;
     height: 40px;
     margin-top: 50px;
@@ -23,5 +21,9 @@
   .options{
     margin-left: 10%;
     margin-right: 10%;
+  }
+  .center{
+    margin-left: auto;
+    margin-right: auto;
   }
   

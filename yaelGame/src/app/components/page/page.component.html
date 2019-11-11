@@ -1,11 +1,13 @@
 
 <div class="card" *ngIf="options">
-    <h5 *ngIf="pageInfo" [innerHTML] = "getQuestion()"></h5>
+    <div class="row center">
+            <h5 *ngIf="pageInfo" style="font-weight: bold;color:steelblue; margin-right: 5px;">{{'Q:' + (pageIndex + 1)}}</h5>
+            <h5 *ngIf="pageInfo" [innerHTML] = "pageInfo.question"></h5>
+    </div>
     <div class="options">
         <!-- <app-option *ngFor="let option of options, let i = index" 
         [optionInfo]="option" [index]="i" (clicked)="optionClicked($event)"
-        [showResult]="(state === pageState.result)" style.width.px="600"></app-option> -->
-
+        [showResult]="(state === pageState.result)"></app-option> -->
         <div class="row">
             <div class="col">
                 <app-option [optionInfo]="options[0]" [index]="0" (clicked)="optionClicked($event)"
@@ -28,6 +30,6 @@
         </div>
     </div>
 
-    <button class="actionButton" (click) ="(state !== pageState.result)?onOk():onContinue()"
+    <button class="actionButton center" (click) ="(state !== pageState.result)?onOk():onContinue()"
             [disabled]="(state === pageState.init)? 'disabled': null">{{(state !== pageState.result)?'OK':'Continue'}}</button>
 </div>
