@@ -2,9 +2,30 @@
 <div class="card" *ngIf="options">
     <h5 *ngIf="pageInfo" [innerHTML] = "getQuestion()"></h5>
     <div class="options">
-        <app-option *ngFor="let option of options, let i = index" 
+        <!-- <app-option *ngFor="let option of options, let i = index" 
         [optionInfo]="option" [index]="i" (clicked)="optionClicked($event)"
-        [showResult]="(state === pageState.result)" style.width.px="600"></app-option>
+        [showResult]="(state === pageState.result)" style.width.px="600"></app-option> -->
+
+        <div class="row">
+            <div class="col">
+                <app-option [optionInfo]="options[0]" [index]="0" (clicked)="optionClicked($event)"
+                [showResult]="(state === pageState.result)"></app-option>
+            </div>
+            <div class="col">
+                <app-option [optionInfo]="options[1]" [index]="1" (clicked)="optionClicked($event)"
+                [showResult]="(state === pageState.result)"></app-option>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <app-option [optionInfo]="options[2]" [index]="2" (clicked)="optionClicked($event)"
+                [showResult]="(state === pageState.result)"></app-option>
+            </div>
+            <div class="col">
+                <app-option [optionInfo]="options[3]" [index]="3" (clicked)="optionClicked($event)"
+                [showResult]="(state === pageState.result)"></app-option>
+            </div>
+        </div>
     </div>
 
     <button class="actionButton" (click) ="(state !== pageState.result)?onOk():onContinue()"
