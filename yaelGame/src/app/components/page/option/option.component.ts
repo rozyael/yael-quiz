@@ -23,10 +23,16 @@ export class OptionComponent implements OnInit {
   ngOnInit() {
   }
 
-  getBorder(){
+  getColor(){
     if(this.showResult){
       return this.optionInfo.selected? this.optionInfo.is_correct? 'green':'red':'grey';
     }
     return this.optionInfo.selected?'blue':'grey';
+  }
+  showOkIcon(){
+    return this.showResult && this.optionInfo.selected && this.optionInfo.is_correct;
+  }
+  showWrongIcon(){
+    return this.showResult && this.optionInfo.selected && !this.optionInfo.is_correct;
   }
 }

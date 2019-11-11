@@ -1,10 +1,27 @@
 .actionButton {
+    margin-left: auto;
+    margin-right: auto;
     width: 150px;
     height: 40px;
-    margin-left: 550px;
-    margin-top: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     border-radius: 15px;
   }
   button:hover {
     background-color: white;
   }
+  .card{
+    width: 100%;
+    height: 500px;
+    background-color: lightgray;
+  }
+  h5{
+    margin-top: 100px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .options{
+    margin-left: 360px;
+    margin-right: 200px;
+  }
+  

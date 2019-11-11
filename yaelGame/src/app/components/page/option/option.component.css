@@ -1,10 +1,16 @@
 .localbutton {
-    width: 300px;
-    height: 50px;
+    width: 400px;
+    height: 80px;
     margin: 5px;
     border-radius: 15px;
     border-width: 5px;
+    background-color: white;
   }
   button:hover {
     background-color: white;
+  }
+  i {
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
   }

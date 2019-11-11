@@ -1,10 +1,10 @@
 
-<div *ngIf="options">
-    <h1 *ngIf="pageInfo" [innerHTML] = "getQuestion()"></h1>
-    <div>
+<div class="card" *ngIf="options">
+    <h5 *ngIf="pageInfo" [innerHTML] = "getQuestion()"></h5>
+    <div class="options">
         <app-option *ngFor="let option of options, let i = index" 
         [optionInfo]="option" [index]="i" (clicked)="optionClicked($event)"
-        [showResult]="(state === pageState.result)"></app-option>
+        [showResult]="(state === pageState.result)" style.width.px="600"></app-option>
     </div>
 
     <button class="actionButton" (click) ="(state !== pageState.result)?onOk():onContinue()"

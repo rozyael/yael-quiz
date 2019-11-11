@@ -3,10 +3,10 @@
     <h1>Click start to play</h1>
     <button (click)="StartGame()">Start game</button>
 </div>
-<div *ngIf="state">
+<div *ngIf="state" class="card">
     <app-page [pageInfo]="pages[pageIndex]" [pageIndex]="pageIndex" (onNext) = "nextPage($event)"></app-page>
-    <span *ngFor="let page of pages, let i = index">
-        <span class="dot" [style.background-color]="pageIndex===i?'rgb(105, 166, 190)':'#bbb'"></span>
-    </span>  
+    <div style="text-align:center;margin-top: 10px;">
+        <span *ngFor="let page of pages, let i = index" class="dot" [style.background-color]="pageIndex===i?'rgb(105, 166, 190)':'#bbb'"></span>
+    </div>  
 </div>
 
